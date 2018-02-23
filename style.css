@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin|Orbitron|Oswald');
+
+.top-nav{
+  margin-top:10px;
+}
+
+.title-space{
+  font-size:25px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight:bold;
+  margin:0px;
+}
+
+.title-space a{
+  color:black !important;
+}
+
+.nav-link{
+  float:right;
+  padding-left: 15px;
+  font-family: 'Oswald', sans-serif;
+  font-size:17px;
+}
+
+.nav-link a{
+  font-weight:bold;
+  color:black !important;
+}
+
+.nav-link a:hover{
+color:#1c9879;
+}
+
+.maindisplay{
+  margin-left:20px;
+  margin-right:20px;
+}
+
+.sidebar, h5, .footer-copyright{
+  font-family: 'Oswald', sans-serif;
+}
+
+.page-footer {
+    margin: 10px;
+    margin-bottom:20px;
+}
+
+.collapsible-header:hover  {
+  background-color: #eeeeee;
+}
+
+.fa-medkit,.deep-orange{
+  color:white;
+}
+
+.bh-help:hover,.orange-background:hover{
+  background-color: #ff7043 !important;
+}
+
+td{
+  padding:5px!important;
+}
+
+.chip{
+  width: 150px;
+}
+
+p, td, div{
+  font-family: 'Cabin', sans-serif;
+}
+
+.page-footer, .title-wrapper{
+  background-color:#C5D7E0 !important;
+}
+
+.footer-copyright{
+  background-color:#6E91AD !important;
+}
+
+/*a{
+  color: #6E91AD !important;
+}*/
+
+.focus-wrapper h3{
+  font-family: 'Oswald', sans-serif;
+}
+
+.focus-wrapper p{
+  font-size:17px;
+}
+
+.nav-block{
+  min-height:50px !important;
+}
+
+.collapsible-body i{
+  width:30px;
+}
+
+.collapsible-body a:hover{
+  color:black !important;
+}
+
+.chip:hover{
+  color:black !important;
+}
+
+#homepage-cards{
+  max-width:1200px;
+}
+
+#bluehost-main{
+  max-width:1600px;
+}
+
+.btn-floating, .btn{
+    background-color: #ff5722 !important;
+    margin-bottom:20px;
+}
+
+.btn-floating:hover {
+    background-color: #ff8159 !important;
+    color: #ccc !important;
+}
+
+#homepage-cards .card{
+  padding:10px;
+}
+
+.top-nav li a:hover{
+  color: #6E91AD !important;
+}
+
+.homepage-card-wrapper:hover{
+  color:#ff5722;
+}
+
+#homepage-cards h4{
+  text-align:center;
+  margin-top: 10px;
+  font-family: 'Oswald', sans-serif;
+}
+
+#homepage-cards p{
+  text-align:center;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+#homepage-cards i{
+  font-size:50px;
+  margin-top:15px;
+}
+
+#homepage-cards a{
+  color:black!important;
+}
+
+#footer-container{
+  min-height:150px;
+}
+
+.card .collapsible {
+    box-shadow: none;
+}
+
+
+
+/***********/
+
+.copy-container {
+position: relative;
+width: 100%;
+height: 150px;
+}
+
+.copy-container .copy-after {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+display: none;
+background-color: transparent;
+}
+
+.copy-container:hover .copy-after{
+display:block;
+background-color:rgba(255,255,255,.8);
+cursor:pointer;
+}
+
+.copy-text{
+padding-top:30px;
+text-align: center;
+color:#74BE79;
+font-weight:bold;
+font-size:24px !important;
+text-shadow:4px 4px white;
+}
+
+strong {
+    font-weight: bold !important;
+}
+
+.lowprofile-collapsible-header {
+    border:1px solid #7d7373 !important;
+}
+
+.focus-wrapper .btn-large{
+  background-color: #FF5722;
+  color: white!important;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left:20px;
+}
+
+.focus-wrapper .btn-large:hover{
+background-color: #ff7043 !important;
+}
+
+.custom-orange-text{
+  color: #ff7043 !important;
+}
+
+.orange-background{
+  background-color: #ff5722 !important;
+  color: white;
+}
+
+.collapsible-body{
+  font-size:17px;
+}
+
+.showRestoreTemplate,.showMigTemplate,.vDeckOtherTemplates{
+  cursor:pointer;
+}
+
+.showRestoreTemplate:hover,.showMigTemplate:hover,.vDeckOtherTemplates:hover{
+  color: #ff7043 !important;
+}
+
+.card-selectable-inner{
+  border:1px solid #d8d8d8;
+  padding:20px;
+}
+
+.card-selectable-inner:hover, .card-selectable-text:hover{
+  color: #ff7043 !important;
+  cursor:pointer;
+  border-color: #ff7043;
+}
+
+.card-selectable-text{
+  color: #6E91AD;
+  font-weight:bold;
+}
+
+.card .s4{
+  text-align:center;
+}
+
+.card .s4 i{
+  font-size:60px;
+  padding:20px;
+  padding-top:50px;
+  padding-bottom:50px;
+}
+
+.squarebullets li{
+  list-style-type: square !important;
+  margin:25px;
+}
+
+.LeftMenuItem{
+  cursor:pointer;
+  color: rgb(110, 145, 173);
+}
+
+.LeftMenuItem:hover{
+  color:black;
+}
+
+.cardBullets li{
+  list-style-type: disc !important;
+  margin-left:40px;
+  margin-right:40px;
+  padding:10px;
+}
+
+.card .collapsible p{
+  padding:0px;
+}
+
+.bold{
+  font-weight:bold;
+}
+
+.collapsible-body ul li{
+  list-style-type: square !important;
+  margin-left:40px;
+  margin-right:40px;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color:#f5f5f5;
+}
+
+main {
+  flex: 1 0 auto;
+}
