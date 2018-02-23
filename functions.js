@@ -1,12 +1,14 @@
 document.getElementById("oldest-mig-date").innerHTML="hello";
 
 var xmlhttp = new XMLHttpRequest();
-var url = "http://bigewiki.com/json/bhdata.json";
+var url = "http://bigewiki.com/json/projectdata.json";
 xmlhttp.open("GET", url, false);
 xmlhttp.send();
 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
   var result = xmlhttp.responseText;
   var jsObject = JSON.parse(result);
+  $('.loading-card').hide();
+  $('#main-display').show();
 }
 
 roger_complete = 0;

@@ -1,6 +1,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <link href="style.css" rel="stylesheet" type="text/css"/>
 
 <body>
@@ -16,27 +17,36 @@
     </div>
   </header>
   <main>
-    <div class="card">
-      <h3>From <span id="oldest-mig-date"></span> to <span id="newest-mid-date"></span></h3>
-      Roger Completed: <span id="roger_complete_display"></span><br>
-      Johhny Completed: <span id="johnny_complete_display"></span><br>
-      Penelope Completed: <span id="penelope_complete_display"></span><br>
-      Karen Completed: <span id="karen_complete_display"></span><br>
-      Adrian Completed: <span id="adrian_complete_display"></span><br>
-    </div>
-    <div class="card">
-      Roger Active Days: <span id="roger_activedays_display"></span><br>
-      Johhny Active Days: <span id="johnny_activedays_display"></span><br>
-      Penelope Active Days: <span id="penelope_activedays_display"></span><br>
-      Karen Active Days: <span id="karen_activedays_display"></span><br>
-      Adrian Active Days: <span id="adrian_activedays_display"></span><br>
-    </div>
-    <div class="card">
-      Roger Average Migrations Completed Per Day: <span id="roger_completionrate_display"></span><br>
-      Johhny Average Migrations Completed Per Day: <span id="johnny_completionrate_display"></span><br>
-      Penelope Average Migrations Completed Per Day: <span id="penelope_completionrate_display"></span><br>
-      Karen Average Migrations Completed Per Day: <span id="karen_completionrate_display"></span><br>
-      Adrian Average Migrations Completed Per Day: <span id="adrian_completionrate_display"></span><br>
+    <div id="main">
+      <div class="card loading-card">
+        <div class="progress-wrapper">
+          <h4>Please wait...</h4>
+        </div>
+      </div>
+
+    <div id="main-display">
+      <div class="card">
+        <h3>From <span id="oldest-mig-date"></span> to <span id="newest-mid-date"></span></h3>
+        Roger Completed: <span id="roger_complete_display"></span><br>
+        Johhny Completed: <span id="johnny_complete_display"></span><br>
+        Penelope Completed: <span id="penelope_complete_display"></span><br>
+        Karen Completed: <span id="karen_complete_display"></span><br>
+        Adrian Completed: <span id="adrian_complete_display"></span><br>
+      </div>
+      <div class="card">
+        Roger Active Days: <span id="roger_activedays_display"></span><br>
+        Johhny Active Days: <span id="johnny_activedays_display"></span><br>
+        Penelope Active Days: <span id="penelope_activedays_display"></span><br>
+        Karen Active Days: <span id="karen_activedays_display"></span><br>
+        Adrian Active Days: <span id="adrian_activedays_display"></span><br>
+      </div>
+      <div class="card">
+        Roger Average Migrations Completed Per Day: <span id="roger_completionrate_display"></span><br>
+        Johhny Average Migrations Completed Per Day: <span id="johnny_completionrate_display"></span><br>
+        Penelope Average Migrations Completed Per Day: <span id="penelope_completionrate_display"></span><br>
+        Karen Average Migrations Completed Per Day: <span id="karen_completionrate_display"></span><br>
+        Adrian Average Migrations Completed Per Day: <span id="adrian_completionrate_display"></span><br>
+      </div>
     </div>
   </main>
   <footer class="page-footer hoverable z-depth-3">
@@ -48,16 +58,17 @@
             </p>
           </div>
           <div class="col s4 black-text bottom">
-            <a href="#generate-quote" id="generate-quote" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Generate a random quote" onClick={getNewQuote}><i class="fa fa-refresh" aria-hidden="true" title=""></i></a> <span id="quote-area">{getQuote()}</span>
+            <a href="#generate-quote" id="generate-quote" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Generate a random quote" onClick={getNewQuote}><i class="fas fa-sync"></i></a> <span id="quote-area"><i class="fas fa-spinner fa-spin"></i></span>
           </div>
         </div>
       </div>
       <div class="footer-copyright">
         <div class="container black-text text-lighten-3">
-        &copy; {showYear()} &bull; Professional Services
+        &copy; <span id="showYear"></span> &bull; Professional Services
         <div class="black-text text-lighten-4 right" href="#!">A ProServe Production</div>
         </div>
       </div>
       <script src="functions.js"></script>
+      <script src="misc-functions.js"></script>
     </footer>
 </body>
