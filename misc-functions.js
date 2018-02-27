@@ -53,3 +53,42 @@ function regenQuote() {
     /******************/
 showYear();
 getQuote();
+
+$("#generate-quote").click(function(){
+getNewQuote();
+});
+
+
+/******************/
+// Date functions
+/******************/
+
+/****SET TODAY****/
+
+// var date = new Date();
+var date = new Date('2018-02-03T00:00:00+05:30');//yyyy-dd-mm
+// forcing 2 digit month
+var todaysMonth = (1 + date.getMonth()).toString();
+todaysMonth = todaysMonth.length > 1 ? todaysMonth : '0' + todaysMonth;
+// forcing 2 digit day
+var todaysDay = date.getDate().toString();
+todaysDay = todaysDay.length > 1 ? todaysDay : '0' + todaysDay;
+// set today's variable
+todaysDate = todaysMonth + '/' + todaysDay + '/' +  date.getFullYear();
+
+
+/****SET DATE FOR A WEEK AGO****/
+
+// Here I am setting the date to be 7 days in the past
+date.setDate(date.getDate() - 7);
+// forcing 2 digit month
+var weekAgosMonth = (1 + date.getMonth()).toString();
+weekAgosMonth = weekAgosMonth.length > 1 ? weekAgosMonth : '0' + weekAgosMonth;
+// forcing 2 digit day
+var weekAgosDay = date.getDate().toString();
+weekAgosDay = weekAgosDay.length > 1 ? weekAgosDay : '0' + weekAgosDay;
+// I create the variable representing 7 days ago
+weekAgosDate = weekAgosMonth + '/' + weekAgosDay + '/' +  date.getFullYear();
+// storing them in plain view
+$('#weekAgosDate').html(weekAgosDate);
+$('#todaysDate').html(todaysDate);
