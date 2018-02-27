@@ -1,4 +1,3 @@
-document.getElementById("oldest-mig-date").innerHTML="hello";
 
 var xmlhttp = new XMLHttpRequest();
 var url = "http://bigewiki.com/json/projectdata.json";
@@ -52,7 +51,7 @@ for (var i=0; i<jsObject.service_list.length; i++) {
           $('#roger_completionrate_display').html(roger_complete/roger_activedays);
         }//end if check if it's a new day
     }
-    // tyler
+    // to
     if(jsObject.service_list[i].assigned_to=="johnny"){
       johnny_complete = johnny_complete+1;
       $('#johnny_complete_display').html(johnny_complete);
@@ -63,7 +62,7 @@ for (var i=0; i<jsObject.service_list.length; i++) {
         $('#johnny_completionrate_display').html(johnny_complete/johnny_activedays);
       }
     }
-    // miekkal
+    // mc
     if(jsObject.service_list[i].assigned_to=="penelope"){
       penelope_complete = penelope_complete+1;
       $('#penelope_complete_display').html(penelope_complete);
@@ -74,7 +73,7 @@ for (var i=0; i<jsObject.service_list.length; i++) {
         $('#penelope_completionrate_display').html(penelope_complete/penelope_activedays);
       }
     }
-    // sarah
+    // sh
     if(jsObject.service_list[i].assigned_to=="karen"){
       karen_complete = karen_complete+1;
       $('#karen_complete_display').html(karen_complete);
@@ -85,7 +84,7 @@ for (var i=0; i<jsObject.service_list.length; i++) {
         $('#karen_completionrate_display').html(karen_complete/karen_activedays);
       }
     }
-    // tony
+    // ta
     if(jsObject.service_list[i].assigned_to=="adrian"){
       adrian_complete = adrian_complete+1;
       $('#adrian_complete_display').html(adrian_complete);
