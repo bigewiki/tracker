@@ -14,12 +14,20 @@ var todaysDay = date.getDate().toString();
 todaysDay = todaysDay.length > 1 ? todaysDay : '0' + todaysDay;
 // set today's variable
 todaysDate = todaysMonth + '/' + todaysDay + '/' +  date.getFullYear();
-
-
+/*******************************/
 /****SET DATE FOR A WEEK AGO****/
+/*******************************/
+// creating array to set a variable for past 7 days
+var sevenDayArray=["day0", "day1", "day2", "day3", "day4", "day5", "day6"]
+// looping out array to get the date values
+for (var i=0; i<sevenDayArray.length; i++) {
+date.setDate(date.getDate() - 1);
+
+}
 
 // Here I am setting the date to be 7 days in the past
-date.setDate(date.getDate() - 7);
+// date.setDate(date.getDate() - 7);
+
 // forcing 2 digit month
 var weekAgosMonth = (1 + date.getMonth()).toString();
 weekAgosMonth = weekAgosMonth.length > 1 ? weekAgosMonth : '0' + weekAgosMonth;
@@ -31,6 +39,7 @@ weekAgosDate = weekAgosMonth + '/' + weekAgosDay + '/' +  date.getFullYear();
 // storing them in plain view
 $('#weekAgosDate').html(weekAgosDate);
 $('#todaysDate').html(todaysDate);
+
 
 /******************/
 // API CALL
@@ -104,10 +113,6 @@ for (var i=0; i<jsObject.service_list.length; i++) {
         $("#total_cancel_lastweek").html(total_cancel_lastweek);
       }
     }
-
-
-
-
 
 // check if complete
   if(jsObject.service_list[i].status=="Complete"){
