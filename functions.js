@@ -31,12 +31,14 @@ sevenDayArrayMonth = sevenDayArrayMonth.length > 1 ? sevenDayArrayMonth : '0' + 
 var sevenDayArrayDay = date.getDate().toString();
 sevenDayArrayDay = sevenDayArrayDay.length > 1 ? sevenDayArrayDay : '0' + sevenDayArrayDay;
 // Here I create the variable representing 7 days ago
-sevenDayArray[i] = sevenDayArrayMonth + '/' + sevenDayArrayDay + '/' +  date.getFullYear();
+sevenDayArray[i] = date.getFullYear() + "-" + sevenDayArrayMonth + "-" + sevenDayArrayDay
 }
 
 // storing the days in plain view
 $('#todaysDateOutput').html(todaysDate);
 $('#weekAgosDateOutput').html(sevenDayArray[0]);
+
+
 
 
 /******************/
@@ -93,8 +95,19 @@ $("#adrian_week_complete").html(adrian_week_complete);
 total_cxreview_lastweek=0;
 // setting cancellations
 total_cancel_lastweek=0;
+// setting total sold for last week
+total_sold_lastweek=0;
+
+/************************************/
+// Looping through all the projects gathered through the API
+/************************************/
 
 for (var i=0; i<jsObject.service_list.length; i++) {
+
+  if(sevenDayArray.includes(jsObject.service_list[i].added.substring(0, 10))==true){
+    total_sold_lastweek=total_sold_lastweek+1;
+    $("#total_sold_lastweek").html(total_sold_lastweek);
+  };
 
   if(jsObject.service_list[i].status=="Customer Review"){
     // check if it's been within 7 days
