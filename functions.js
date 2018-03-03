@@ -25,13 +25,20 @@ var sevenDayArray=["day0", "day1", "day2", "day3", "day4", "day5", "day6"]
 // looping out array to get the date values
 for (var i=0; i<sevenDayArray.length; i++) {
 date.setDate(date.getDate() - 1);
-sevenDayArray[i]=date.getDate();
+// forcing 2 digit month
+var sevenDayArrayMonth = (1 + date.getMonth()).toString();
+sevenDayArrayMonth = sevenDayArrayMonth.length > 1 ? sevenDayArrayMonth : '0' + sevenDayArrayMonth;
+// forcing 2 digit day
+var sevenDayArrayDay = date.getDate().toString();
+sevenDayArrayDay = sevenDayArrayDay.length > 1 ? sevenDayArrayDay : '0' + sevenDayArrayDay;
+// Here I create the variable representing 7 days ago
+sevenDayArray[i] = sevenDayArrayMonth + '/' + sevenDayArrayDay + '/' +  date.getFullYear();
 }
 
 /*********end testing***********/
 
-// Here I am setting the date to be 7 days in the past
-// date.setDate(date.getDate() - 7);
+/*** chopping block ****/
+
 
 // forcing 2 digit month
 var weekAgosMonth = (1 + date.getMonth()).toString();
@@ -39,9 +46,12 @@ weekAgosMonth = weekAgosMonth.length > 1 ? weekAgosMonth : '0' + weekAgosMonth;
 // forcing 2 digit day
 var weekAgosDay = date.getDate().toString();
 weekAgosDay = weekAgosDay.length > 1 ? weekAgosDay : '0' + weekAgosDay;
-// I create the variable representing 7 days ago
+// Here I create the variable representing 7 days ago
 weekAgosDate = weekAgosMonth + '/' + weekAgosDay + '/' +  date.getFullYear();
-// storing them in plain view
+
+/*** end chopping block ****/
+
+// storing the days in plain view
 $('#weekAgosDate2').html(sevenDayArray[0]);
 $('#todaysDate').html(todaysDate);
 
