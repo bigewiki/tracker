@@ -18,10 +18,9 @@ todaysDate = todaysMonth + '/' + todaysDay + '/' +  date.getFullYear();
 /****SET DATE FOR A WEEK AGO****/
 /*******************************/
 
-/******testing**********/
-
 // creating array to set a variable for past 7 days
 var sevenDayArray=["day0", "day1", "day2", "day3", "day4", "day5", "day6"]
+
 // looping out array to get the date values
 for (var i=0; i<sevenDayArray.length; i++) {
 date.setDate(date.getDate() - 1);
@@ -35,26 +34,9 @@ sevenDayArrayDay = sevenDayArrayDay.length > 1 ? sevenDayArrayDay : '0' + sevenD
 sevenDayArray[i] = sevenDayArrayMonth + '/' + sevenDayArrayDay + '/' +  date.getFullYear();
 }
 
-/*********end testing***********/
-
-/*** chopping block ****/
-
-
-// forcing 2 digit month
-var weekAgosMonth = (1 + date.getMonth()).toString();
-weekAgosMonth = weekAgosMonth.length > 1 ? weekAgosMonth : '0' + weekAgosMonth;
-// forcing 2 digit day
-var weekAgosDay = date.getDate().toString();
-weekAgosDay = weekAgosDay.length > 1 ? weekAgosDay : '0' + weekAgosDay;
-// Here I create the variable representing 7 days ago
-weekAgosDate = weekAgosMonth + '/' + weekAgosDay + '/' +  date.getFullYear();
-
-/*** end chopping block ****/
-
 // storing the days in plain view
-$('#weekAgosDate2').html(sevenDayArray[0]);
-$('#todaysDate').html(todaysDate);
-
+$('#todaysDateOutput').html(todaysDate);
+$('#weekAgosDateOutput').html(sevenDayArray[0]);
 
 
 /******************/
