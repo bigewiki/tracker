@@ -52,10 +52,7 @@
         Adrian Average Projects Completed Per Day: <span id="adrian_completionrate_display"></span><br>
       </div>
       <div class="card">
-        Total sold in last week: <span id="total_sold_lastweek"></span><br>
-        Total completed in last week: <span id="total_complete_lastweek"></span><br>
-        Total customer review in last week: <span id="total_cxreview_lastweek"></span><br>
-        Total cancel in last week: <span id="total_cancel_lastweek"></span>
+
       </div>
       <div class="card">
         Roger completed in last week: <span id="roger_week_complete"></span><br>
@@ -75,17 +72,21 @@
             </p>
           </div>
           <div class="col s4 black-text bottom">
-            <a href="#generate-quote" id="generate-quote" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Generate a random quote" onClick={getNewQuote}><i class="fas fa-sync"></i></a> <span id="quote-area"><i class="fas fa-spinner fa-spin"></i></span>
+            Total sold in last week: <span id="total_sold_lastweek"></span><br>
+            <!-- testzone -->
+              Secondary counter - sold in last week: <span id="total_sold_lastweek_2"></span><br>
+            <!-- end testzone -->
+            Total completed in last week: <span id="total_complete_lastweek"></span><br>
+            Total customer review in last week: <span id="total_cxreview_lastweek"></span><br>
+            Total cancel in last week: <span id="total_cancel_lastweek"></span>
           </div>
         </div>
       </div>
       <div class="footer-copyright">
         <div class="container black-text text-lighten-3">
-        &copy; <span id="showYear"></span> &bull; Professional Services
-        <div class="black-text text-lighten-4 right" href="#!">A ProServe Production</div>
+        <div class="black-text text-lighten-4 right">A ProServe Production</div>
         </div>
       </div>
       <script src="functions.js"></script>
-      <script src="misc-functions.js"></script>
     </footer>
 </body>
