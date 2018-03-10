@@ -333,3 +333,7 @@ main {
   padding-top:50px;
   text-align:center;
 }
+
+#main-display .card{
+  padding:10px;
+}
