@@ -97,8 +97,6 @@ total_cxreview_lastweek=0;
 total_cancel_lastweek=0;
 // setting total sold for last week
 total_sold_lastweek=0;
-// setting second total sold for last week
-total_sold_lastweek_2=0;
 // setting customer review queue
 total_customer_review=0;
 // setting waiting for customer queue
@@ -117,44 +115,6 @@ for (var i=0; i<jsObject.service_list.length; i++) {
     total_sold_lastweek=total_sold_lastweek+1;
     $("#total_sold_lastweek").html(total_sold_lastweek);
   };
-
-  if(jsObject.service_list[i].added.substring(0, 10)=="2018-02-01"){
-    total_sold_lastweek_2=total_sold_lastweek_2+1;
-    $("#total_sold_lastweek_2").html(total_sold_lastweek_2);
-  }
-
-  if(jsObject.service_list[i].added.substring(0, 10)=="2018-01-31"){
-    total_sold_lastweek_2=total_sold_lastweek_2+1;
-    $("#total_sold_lastweek_2").html(total_sold_lastweek_2);
-  }
-
-  if(jsObject.service_list[i].added.substring(0, 10)=="2018-01-30"){
-    total_sold_lastweek_2=total_sold_lastweek_2+1;
-    $("#total_sold_lastweek_2").html(total_sold_lastweek_2);
-  }
-
-  if(jsObject.service_list[i].added.substring(0, 10)=="2018-01-29"){
-    total_sold_lastweek_2=total_sold_lastweek_2+1;
-    $("#total_sold_lastweek_2").html(total_sold_lastweek_2);
-  }
-
-  if(jsObject.service_list[i].added.substring(0, 10)=="2018-01-28"){
-    total_sold_lastweek_2=total_sold_lastweek_2+1;
-    $("#total_sold_lastweek_2").html(total_sold_lastweek_2);
-  }
-
-  if(jsObject.service_list[i].added.substring(0, 10)=="2018-01-27"){
-    total_sold_lastweek_2=total_sold_lastweek_2+1;
-    $("#total_sold_lastweek_2").html(total_sold_lastweek_2);
-  }
-
-  if(jsObject.service_list[i].added.substring(0, 10)=="2018-01-26"){
-    total_sold_lastweek_2=total_sold_lastweek_2+1;
-    $("#total_sold_lastweek_2").html(total_sold_lastweek_2);
-  }
-
-
-
 
 
   if(jsObject.service_list[i].status=="Customer Review"){
