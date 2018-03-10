@@ -9,9 +9,10 @@
     <div class="row top-nav">
       <div class="col s12">
         <div class="col s12 hoverable z-depth-3 title-wrapper valign-wrapper nav-block">
-          <h2 class="title-space"><a href="/">
-            Professional Services</a>
+          <h2 class="title-space col s6">
+            Professional Services
           </h2>
+          <p class="col s6"><strong>Reporting Period:</strong> <span id="oldest-mig-date"></span> - <span id="newest-mid-date"></span></p>
         </div>
        </div>
     </div>
@@ -24,62 +25,103 @@
         </div>
       </div>
 
-    <div id="main-display">
-      <div class="card">
-        <h3>From <span id="oldest-mig-date"></span> to <span id="newest-mid-date"></span></h3>
+    <div id="main-display" class="row">
+      <div class="col s6">
+        <div class="card">
+          Roger Completed: <span id="roger_complete_display"></span><br>
+          Johhny Completed: <span id="johnny_complete_display"></span><br>
+          Penelope Completed: <span id="penelope_complete_display"></span><br>
+          Karen Completed: <span id="karen_complete_display"></span><br>
+          Adrian Completed: <span id="adrian_complete_display"></span><br>
+        </div>
       </div>
-      <div class="card">
-        Roger Completed: <span id="roger_complete_display"></span><br>
-        Johhny Completed: <span id="johnny_complete_display"></span><br>
-        Penelope Completed: <span id="penelope_complete_display"></span><br>
-        Karen Completed: <span id="karen_complete_display"></span><br>
-        Adrian Completed: <span id="adrian_complete_display"></span><br>
+      <div class="col s6">
+        <div class="card">
+          Roger Active Days: <span id="roger_activedays_display"></span><br>
+          Johhny Active Days: <span id="johnny_activedays_display"></span><br>
+          Penelope Active Days: <span id="penelope_activedays_display"></span><br>
+          Karen Active Days: <span id="karen_activedays_display"></span><br>
+          Adrian Active Days: <span id="adrian_activedays_display"></span><br>
+        </div>
       </div>
-      <div class="card">
-        Roger Active Days: <span id="roger_activedays_display"></span><br>
-        Johhny Active Days: <span id="johnny_activedays_display"></span><br>
-        Penelope Active Days: <span id="penelope_activedays_display"></span><br>
-        Karen Active Days: <span id="karen_activedays_display"></span><br>
-        Adrian Active Days: <span id="adrian_activedays_display"></span><br>
+      <div class="col s6">
+        <div class="card">
+          Roger Average Projects Completed Per Day: <span id="roger_completionrate_display"></span><br>
+          Johhny Average Projects Completed Per Day: <span id="johnny_completionrate_display"></span><br>
+          Penelope Average Projects Completed Per Day: <span id="penelope_completionrate_display"></span><br>
+          Karen Average Projects Completed Per Day: <span id="karen_completionrate_display"></span><br>
+          Adrian Average Projects Completed Per Day: <span id="adrian_completionrate_display"></span><br>
+        </div>
       </div>
-      <div class="card">
-        Roger Average Projects Completed Per Day: <span id="roger_completionrate_display"></span><br>
-        Johhny Average Projects Completed Per Day: <span id="johnny_completionrate_display"></span><br>
-        Penelope Average Projects Completed Per Day: <span id="penelope_completionrate_display"></span><br>
-        Karen Average Projects Completed Per Day: <span id="karen_completionrate_display"></span><br>
-        Adrian Average Projects Completed Per Day: <span id="adrian_completionrate_display"></span><br>
+      <div class="col s6">
+        <div class="card">
+          Roger completed in last week: <span id="roger_week_complete"></span><br>
+          Johhny completed in last week: <span id="johnny_week_complete"></span><br>
+          Penelope completed in last week: <span id="penelope_week_complete"></span><br>
+          Karen completed in last week: <span id="karen_week_complete"></span><br>
+          Adrian completed in last week: <span id="adrian_week_complete"></span><br>
+        </div>
       </div>
-      <div class="card">
 
-      </div>
-      <div class="card">
-        Roger completed in last week: <span id="roger_week_complete"></span><br>
-        Johhny completed in last week: <span id="johnny_week_complete"></span><br>
-        Penelope completed in last week: <span id="penelope_week_complete"></span><br>
-        Karen completed in last week: <span id="karen_week_complete"></span><br>
-        Adrian completed in last week: <span id="adrian_week_complete"></span><br>
-      </div>
     </div>
   </main>
   <footer class="page-footer hoverable z-depth-3">
       <div class="container">
         <div class="row" id="footer-container">
           <div class="col s6 black-text bottom">
-            <h5>Queues</h5>
-            <p>
-              Customer Review: <span id="total_customer_review"></span><br>
-              Waiting For Customer: <span id="total_waiting_for_customer"></span><br>
-              New: <span id="total_new"></span><br>
-              Agent Review: <span id="total_agent_review"></span><br>
-            </p>
+            <table>
+              <thead>
+                <tr>
+                    <th>Current Queue</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>New: </td>
+                  <td><span id="total_new"></span></td>
+                </tr>
+                <tr>
+                  <td>Customer Review: </td>
+                  <td><span id="total_customer_review"></span></td>
+                </tr>
+                <tr>
+                  <td>Waiting For Customer: </td>
+                  <td><span id="total_waiting_for_customer"></span></td>
+                </tr>
+                <tr>
+                  <td>Agent Review: </td>
+                  <td><span id="total_agent_review"></span></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <div class="col s6 black-text bottom">
-            <h5>7 Day Cohort</h5>
-            <span id="weekAgosDateOutput"></span> - <span id="todaysDateOutput"></span><br>
-            Total sold in last week: <span id="total_sold_lastweek"></span><br>
-            Total completed in last week: <span id="total_complete_lastweek"></span><br>
-            Total customer review in last week: <span id="total_cxreview_lastweek"></span><br>
-            Total cancel in last week: <span id="total_cancel_lastweek"></span>
+            <table>
+              <thead>
+                <tr>
+                  <th>Past Week: <span id="weekAgosDateOutput"></span> - <span id="todaysDateOutput"></span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Total sold in last week: </td>
+                  <td><span id="total_sold_lastweek"></span></td>
+                </tr>
+                <tr>
+                  <td>Total completed in last week: </td>
+                  <td><span id="total_complete_lastweek"></span></td>
+                </tr>
+                <tr>
+                  <td>Total customer review in last week: </td>
+                  <td><span id="total_cxreview_lastweek"></span></td>
+                </tr>
+                <tr>
+                  <td>Total cancel in last week: </td>
+                  <td><span id="total_cancel_lastweek"></span></td>
+                </tr>
+              </tbody>
+          </table>
           </div>
         </div>
       </div>
