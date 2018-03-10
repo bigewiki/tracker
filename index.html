@@ -27,8 +27,6 @@
     <div id="main-display">
       <div class="card">
         <h3>From <span id="oldest-mig-date"></span> to <span id="newest-mid-date"></span></h3>
-        <span id="todaysDateOutput"></span><br>
-        <span id="weekAgosDateOutput"></span>
       </div>
       <div class="card">
         Roger Completed: <span id="roger_complete_display"></span><br>
@@ -67,11 +65,17 @@
       <div class="container">
         <div class="row" id="footer-container">
           <div class="col s8 black-text bottom">
+            <h5>Queues</h5>
             <p>
-              Footer space
+              Customer Review: <span id="total_customer_review"></span><br>
+              Waiting For Customer: <span id="total_waiting_for_customer"></span><br>
+              New: <span id="total_new"></span><br>
+              Agent Review: <span id="total_agent_review"></span><br>
             </p>
           </div>
           <div class="col s4 black-text bottom">
+            <h5>7 Day Cohort</h5>
+            <span id="weekAgosDateOutput"></span> - <span id="todaysDateOutput"></span><br>
             Total sold in last week: <span id="total_sold_lastweek"></span><br>
             <!-- testzone -->
               Secondary counter - sold in last week: <span id="total_sold_lastweek_2"></span><br>

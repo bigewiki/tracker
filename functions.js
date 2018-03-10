@@ -99,7 +99,14 @@ total_cancel_lastweek=0;
 total_sold_lastweek=0;
 // setting second total sold for last week
 total_sold_lastweek_2=0;
-
+// setting customer review queue
+total_customer_review=0;
+// setting waiting for customer queue
+total_waiting_for_customer=0;
+// setting new queue
+total_new=0;
+// setting agent review queue
+total_agent_review=0;
 /************************************/
 // Looping through all the projects gathered through the API
 /************************************/
@@ -111,7 +118,6 @@ for (var i=0; i<jsObject.service_list.length; i++) {
     $("#total_sold_lastweek").html(total_sold_lastweek);
   };
 
-// testzone
   if(jsObject.service_list[i].added.substring(0, 10)=="2018-02-01"){
     total_sold_lastweek_2=total_sold_lastweek_2+1;
     $("#total_sold_lastweek_2").html(total_sold_lastweek_2);
@@ -146,18 +152,38 @@ for (var i=0; i<jsObject.service_list.length; i++) {
     total_sold_lastweek_2=total_sold_lastweek_2+1;
     $("#total_sold_lastweek_2").html(total_sold_lastweek_2);
   }
-// end testzone
 
 
 
 
 
   if(jsObject.service_list[i].status=="Customer Review"){
+    //count up total_customer_review
+    total_customer_review=total_customer_review+1;
+    $('#total_customer_review').html(total_customer_review);
     // check if it's been within 7 days
     if(jsObject.service_list[i].age < 8){
       total_cxreview_lastweek=total_cxreview_lastweek+1;
       $("#total_cxreview_lastweek").html(total_cxreview_lastweek);
     }
+  }
+
+  if(jsObject.service_list[i].status=="Waiting For Cust"){
+    //count up total_waiting_for_customer
+    total_waiting_for_customer=total_waiting_for_customer+1;
+    $('#total_waiting_for_customer').html(total_waiting_for_customer);
+  }
+
+  if(jsObject.service_list[i].status=="New"){
+    //count up total_new
+    total_new=total_new+1;
+    $('#total_new').html(total_new);
+  }
+
+  if(jsObject.service_list[i].status=="Agent Review"){
+    //count up total_agent_review
+    total_agent_review=total_agent_review+1;
+    $('#total_agent_review').html(total_agent_review);
   }
 
     if(jsObject.service_list[i].status=="Cancelled"){
@@ -169,7 +195,7 @@ for (var i=0; i<jsObject.service_list.length; i++) {
     }
 
 // check if complete
-  if(jsObject.service_list[i].status=="Complete"){
+  if(jsObject.service_list[i].status=="Complete" || jsObject.service_list[i].status_name=="customer_review"){
     // check if it's been within 7 days
     if(jsObject.service_list[i].age < 8){
       week_total_complete_counter=week_total_complete_counter+1;
