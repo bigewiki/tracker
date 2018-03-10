@@ -28,38 +28,63 @@
     <div id="main-display" class="row">
       <div class="col s12">
         <ul class="tabs">
-          <li class="tab col s4"><a class="active" href="#7day_cohort_tab">Trending</a></li>
-          <li class="tab col s4"><a  href="#mtd_cohort_tab">Month to Date</a></li>
-          <li class="tab col s4"><a href="#test3">Agent stats</a></li>
-          <li class="tab col s4"><a href="#test3">Lifetime</a></li>
-          <li class="tab col s4"><a href="#test3">Agent stats</a></li>
+          <li class="tab col s3"><a class="active" href="#7day_cohort_tab">Trending</a></li>
+          <li class="tab col s3"><a  href="#mtd_cohort_tab">Month to Date</a></li>
+          <li class="tab col s3"><a href="#lifetime_tab">Lifetime</a></li>
+          <li class="tab col s3"><a href="#agent_tab">Agent stats</a></li>
         </ul>
 
       </div>
       <div id="7day_cohort_tab">
-        <div class="col s6">
+        <div class="col s12">
           <div class="card z-depth-0">
-            Roger completed in last week: <span id="roger_week_complete"></span><br>
-            Johhny completed in last week: <span id="johnny_week_complete"></span><br>
-            Penelope completed in last week: <span id="penelope_week_complete"></span><br>
-            Karen completed in last week: <span id="karen_week_complete"></span><br>
-            Adrian completed in last week: <span id="adrian_week_complete"></span><br>
-          </div>
-        </div>
-        <div class="col s6">
-          <div class="card z-depth-0">
-            Roger Average Projects Completed Per Day: <span id="roger_completionrate_display"></span><br>
-            Johhny Average Projects Completed Per Day: <span id="johnny_completionrate_display"></span><br>
-            Penelope Average Projects Completed Per Day: <span id="penelope_completionrate_display"></span><br>
-            Karen Average Projects Completed Per Day: <span id="karen_completionrate_display"></span><br>
-            Adrian Average Projects Completed Per Day: <span id="adrian_completionrate_display"></span><br>
+            <table style="max-width:500px;">
+             <thead>
+               <tr>
+                 <th>Completed in last week</th>
+               </tr>
+               <tr>
+                   <th>Agent Name</th>
+                   <th>Total Completed</th>
+                   <th>Average Per Day</th>
+               </tr>
+             </thead>
+
+             <tbody>
+               <tr>
+                   <td>Roger</td>
+                   <td><span id="roger_week_complete"></span></td>
+                   <td><span id="roger_completionrate_display"></span></td>
+               </tr>
+               <tr>
+                 <td>Johhny</td>
+                 <td><span id="johnny_week_complete"></span></td>
+                 <td><span id="johnny_completionrate_display"></span></td>
+               </tr>
+               <tr>
+                 <td>Penelope</td>
+                 <td><span id="penelope_week_complete"></span></td>
+                 <td><span id="penelope_completionrate_display"></span></td>
+               </tr>
+               <tr>
+                 <td>Karen</td>
+                 <td><span id="karen_week_complete"></span></td>
+                 <td><span id="karen_completionrate_display"></span></td>
+               </tr>
+               <tr>
+                 <td>Adrian</td>
+                 <td><span id="adrian_week_complete"></span></td>
+                 <td><span id="adrian_completionrate_display"></span></td>
+               </tr>
+             </tbody>
+           </table>
           </div>
         </div>
       </div>
       <div id="mtd_cohort_tab" class="col s12">
 
       </div>
-      <div id="test3" class="col s12">
+      <div id="agent_tab" class="col s12">
         <div class="col s6">
           <div class="card z-depth-0">
             Roger Completed: <span id="roger_complete_display"></span><br>
