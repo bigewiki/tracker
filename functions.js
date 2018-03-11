@@ -166,22 +166,11 @@ for (var i=0; i<jsObject.service_list.length; i++) {
     if(jsObject.service_list[i].assigned_to=="roger"){
       roger_complete = roger_complete+1;
       $('#roger_complete_display').html(roger_complete);
-        // check if it's a new active day
-        if(jsObject.service_list[i].added.substring(0, 10)!=roger_startday){
-          // reset the day
-          roger_startday=jsObject.service_list[i].added.substring(0, 10);
-          // add one day to the ticker
-          roger_activedays=roger_activedays+1;
-          // update the display
-          $('#roger_activedays_display').html(roger_activedays);
-          // calculate average migs per day
-          $('#roger_completionrate_display').html(roger_complete/roger_activedays);
-          // count for last 7 days
-          if(jsObject.service_list[i].age < 8){
-            roger_week_complete=roger_week_complete+1;
-            $("#roger_week_complete").html(roger_week_complete);
-          }
-        }//end if check if it's a new day
+        // count for last 7 days
+        if(jsObject.service_list[i].age < 8){
+          roger_week_complete=roger_week_complete+1;
+          $("#roger_week_complete").html(roger_week_complete);
+        }
 
     // other agent checks are based on the above if statement for roger
     }
@@ -189,60 +178,36 @@ for (var i=0; i<jsObject.service_list.length; i++) {
     if(jsObject.service_list[i].assigned_to=="johnny"){
       johnny_complete = johnny_complete+1;
       $('#johnny_complete_display').html(johnny_complete);
-      if(jsObject.service_list[i].added.substring(0, 10)!=johnny_startday){
-        johnny_startday=jsObject.service_list[i].added.substring(0, 10);
-        johnny_activedays=johnny_activedays+1;
-        $('#johnny_activedays_display').html(johnny_activedays);
-        $('#johnny_completionrate_display').html(johnny_complete/johnny_activedays);
-        if(jsObject.service_list[i].age < 8){
-          johnny_week_complete=johnny_week_complete+1;
-          $("#johnny_week_complete").html(johnny_week_complete);
-        }
+      if(jsObject.service_list[i].age < 8){
+        johnny_week_complete=johnny_week_complete+1;
+        $("#johnny_week_complete").html(johnny_week_complete);
       }
     }
     // mc
     if(jsObject.service_list[i].assigned_to=="penelope"){
       penelope_complete = penelope_complete+1;
       $('#penelope_complete_display').html(penelope_complete);
-      if(jsObject.service_list[i].added.substring(0, 10)!=penelope_startday){
-        penelope_startday=jsObject.service_list[i].added.substring(0, 10);
-        penelope_activedays=penelope_activedays+1;
-        $('#penelope_activedays_display').html(penelope_activedays);
-        $('#penelope_completionrate_display').html(penelope_complete/penelope_activedays);
-        if(jsObject.service_list[i].age < 8){
-          penelope_week_complete=penelope_week_complete+1;
-          $("#penelope_week_complete").html(penelope_week_complete);
-        }
+      if(jsObject.service_list[i].age < 8){
+        penelope_week_complete=penelope_week_complete+1;
+        $("#penelope_week_complete").html(penelope_week_complete);
       }
     }
     // sh
     if(jsObject.service_list[i].assigned_to=="karen"){
       karen_complete = karen_complete+1;
       $('#karen_complete_display').html(karen_complete);
-      if(jsObject.service_list[i].added.substring(0, 10)!=karen_startday){
-        karen_startday=jsObject.service_list[i].added.substring(0, 10);
-        karen_activedays=karen_activedays+1;
-        $('#karen_activedays_display').html(karen_activedays);
-        $('#karen_completionrate_display').html(karen_complete/karen_activedays);
-        if(jsObject.service_list[i].age < 8){
-          karen_week_complete=karen_week_complete+1;
-          $("#karen_week_complete").html(karen_week_complete);
-        }
+      if(jsObject.service_list[i].age < 8){
+        karen_week_complete=karen_week_complete+1;
+        $("#karen_week_complete").html(karen_week_complete);
       }
     }
     // ta
     if(jsObject.service_list[i].assigned_to=="adrian"){
       adrian_complete = adrian_complete+1;
       $('#adrian_complete_display').html(adrian_complete);
-      if(jsObject.service_list[i].added.substring(0, 10)!=adrian_startday){
-        adrian_startday=jsObject.service_list[i].added.substring(0, 10);
-        adrian_activedays=adrian_activedays+1;
-        $('#adrian_activedays_display').html(adrian_activedays);
-        $('#adrian_completionrate_display').html(adrian_complete/adrian_activedays);
-        if(jsObject.service_list[i].age < 8){
-          adrian_week_complete=adrian_week_complete+1;
-          $("#adrian_week_complete").html(adrian_week_complete);
-        }
+      if(jsObject.service_list[i].age < 8){
+        adrian_week_complete=adrian_week_complete+1;
+        $("#adrian_week_complete").html(adrian_week_complete);
       }
     }
   } // end of completion check
