@@ -2,6 +2,13 @@
 // Date functions
 /******************/
 
+/******SETUP ROUNDING FUNCTION****/
+
+function precisionRound(number, precision) {
+  var factor = Math.pow(10, precision);
+  return Math.round(number * factor) / factor;
+}
+
 /****SET TODAY****/
 
 // var date = new Date();
@@ -105,6 +112,8 @@ total_waiting_for_customer=0;
 total_new=0;
 // setting agent review queue
 total_agent_review=0;
+// setting total new age
+total_new_age=0;
 /************************************/
 // Looping through all the projects gathered through the API
 /************************************/
@@ -137,7 +146,10 @@ for (var i=0; i<jsObject.service_list.length; i++) {
   if(jsObject.service_list[i].status=="New"){
     //count up total_new
     total_new=total_new+1;
+    total_new_age=total_new_age+jsObject.service_list[i].age;
     $('#total_new').html(total_new);
+    new_avg_age=precisionRound(total_new_age/total_new, 1);
+    $('#new_avg_age').html(new_avg_age);
   }
 
   if(jsObject.service_list[i].status=="Agent Review"){
