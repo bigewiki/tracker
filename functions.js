@@ -12,7 +12,7 @@ function precisionRound(number, precision) {
 /****SET TODAY****/
 
 // var date = new Date();
-var date = new Date('2018-02-03T00:00:00+05:30');//yyyy-dd-mm
+var date = new Date('2018-01-30T00:00:00+05:30');//yyyy-dd-mm
 // forcing 2 digit month
 var todaysMonth = (1 + date.getMonth()).toString();
 todaysMonth = todaysMonth.length > 1 ? todaysMonth : '0' + todaysMonth;
@@ -45,11 +45,8 @@ sevenDayArray[i] = date.getFullYear() + "-" + sevenDayArrayMonth + "-" + sevenDa
 $('#todaysDateOutput').html(todaysDate);
 $('#weekAgosDateOutput').html(sevenDayArray[6]);
 
-
-
-
 /******************/
-// API CALL
+// Get JSON and create objects
 /******************/
 var xmlhttp = new XMLHttpRequest();
 var url = "http://bigewiki.com/json/projectdata.json";
