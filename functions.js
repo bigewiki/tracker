@@ -252,6 +252,6 @@ for (var i=0; i<jsObject.service_list.length; i++) {
   //  update the latest mig date
   $('#newest-mid-date').html(jsObject.service_list[i].added.substring(0, 10));
 
-  // check if it's a new active day
+
 
 } // end of service list loop
