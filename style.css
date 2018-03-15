@@ -337,3 +337,19 @@ main {
 #main-display .card{
   padding:10px;
 }
+
+#footer-container table td,#footer-container table th{
+  border:1px solid black;
+}
+
+#footer-container table{
+  background-color:rgba(225,225,225,.5);
+}
+
+#footer-container table tbody tr:nth-child(odd){
+  background-color: #f2f2f2;
+}
+
+#footer-container table thead{
+  background-color: #6E91AD;
+}
