@@ -126,7 +126,9 @@ total_new_age=0;
 total_cxreview_age=0;
 total_waiting_age=0;
 total_agentreview_age=0;
-//setting completion counter mtd
+/*******************************/
+//setting completion counters mtd
+/*******************************/
 roger_completed_mtd=0;
 $("#roger_completed_mtd").html(roger_completed_mtd);
 
@@ -142,7 +144,13 @@ $("#karen_completed_mtd").html(karen_completed_mtd);
 adrian_completed_mtd=0;
 $("#adrian_completed_mtd").html(adrian_completed_mtd);
 
-
+// setting up array for all mtd dates
+all_mtd_dates=[];
+roger_mtd_dates=[];
+johnny_mtd_dates=[];
+penelope_mtd_dates=[];
+karen_mtd_dates=[];
+adrian_mtd_dates=[];
 
 /************************************/
 // Looping through all the projects gathered through the JSON file
@@ -242,6 +250,16 @@ for (var i=0; i<jsObject.service_list.length; i++) {
         if(jsObject.service_list[i].age <= mtd_days ){
           roger_completed_mtd=roger_completed_mtd+1;
           $('#roger_completed_mtd').html(roger_completed_mtd);
+          //adding date to the array
+          roger_mtd_dates.push(jsObject.service_list[i].age);
+
+          // temporary and annoying in the meantime
+          alert(JSON.stringify(roger_mtd_dates));
+
+          // v this stuff be broken v
+          // roger_mtd_dates=JSON.stringify(roger_mtd_dates);
+          // $("#roger_active_mtd").html(roger_mtd_dates);
+
         }
 
     }
