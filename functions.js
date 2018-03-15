@@ -12,7 +12,7 @@ function precisionRound(number, precision) {
 /****SET TODAY****/
 
 // var date = new Date();
-var date = new Date('2018-01-30T00:00:00+05:30');//yyyy-dd-mm
+var date = new Date('2018-01-29T00:00:00+05:30');//yyyy-dd-mm
 // forcing 2 digit month
 var todaysMonth = (1 + date.getMonth()).toString();
 todaysMonth = todaysMonth.length > 1 ? todaysMonth : '0' + todaysMonth;
@@ -21,6 +21,18 @@ var todaysDay = date.getDate().toString();
 todaysDay = todaysDay.length > 1 ? todaysDay : '0' + todaysDay;
 // set today's variable
 todaysDate = todaysMonth + '/' + todaysDay + '/' +  date.getFullYear();
+
+// figure out how days it's been since the beginning of the month
+
+/**** IMPORTANT *****/
+// do not forget to remove this fake variable when this goes live
+
+// mtd_days=parseInt(todaysDay);
+mtd_days=parseInt(29);
+
+/**** ^IMPORTANT^ *****/
+
+
 /*******************************/
 /****SET DATE FOR A WEEK AGO****/
 /*******************************/
@@ -114,8 +126,26 @@ total_new_age=0;
 total_cxreview_age=0;
 total_waiting_age=0;
 total_agentreview_age=0;
+//setting completion counter mtd
+roger_completed_mtd=0;
+$("#roger_completed_mtd").html(roger_completed_mtd);
+
+johnny_completed_mtd=0;
+$("#johnny_completed_mtd").html(johnny_completed_mtd);
+
+penelope_completed_mtd=0;
+$("#penelope_completed_mtd").html(penelope_completed_mtd);
+
+karen_completed_mtd=0;
+$("#karen_completed_mtd").html(karen_completed_mtd);
+
+adrian_completed_mtd=0;
+$("#adrian_completed_mtd").html(adrian_completed_mtd);
+
+
+
 /************************************/
-// Looping through all the projects gathered through the API
+// Looping through all the projects gathered through the JSON file
 /************************************/
 
 for (var i=0; i<jsObject.service_list.length; i++) {
@@ -208,9 +238,16 @@ for (var i=0; i<jsObject.service_list.length; i++) {
           roger_week_complete=roger_week_complete+1;
           $("#roger_week_complete").html(roger_week_complete);
         }
+        //check if it's within mtd range
+        if(jsObject.service_list[i].age <= mtd_days ){
+          roger_completed_mtd=roger_completed_mtd+1;
+          $('#roger_completed_mtd').html(roger_completed_mtd);
+        }
+
+    }
 
     // other agent checks are based on the above if statement for roger
-    }
+
     // to
     if(jsObject.service_list[i].assigned_to=="johnny"){
       johnny_complete = johnny_complete+1;
@@ -218,6 +255,11 @@ for (var i=0; i<jsObject.service_list.length; i++) {
       if(jsObject.service_list[i].age < 8){
         johnny_week_complete=johnny_week_complete+1;
         $("#johnny_week_complete").html(johnny_week_complete);
+      }
+      //check if it's within mtd range
+      if(jsObject.service_list[i].age <= mtd_days ){
+        johnny_completed_mtd=johnny_completed_mtd+1;
+        $('#johnny_completed_mtd').html(johnny_completed_mtd);
       }
     }
     // mc
@@ -228,6 +270,11 @@ for (var i=0; i<jsObject.service_list.length; i++) {
         penelope_week_complete=penelope_week_complete+1;
         $("#penelope_week_complete").html(penelope_week_complete);
       }
+      //check if it's within mtd range
+      if(jsObject.service_list[i].age <= mtd_days ){
+        penelope_completed_mtd=penelope_completed_mtd+1;
+        $('#penelope_completed_mtd').html(penelope_completed_mtd);
+      }
     }
     // sh
     if(jsObject.service_list[i].assigned_to=="karen"){
@@ -237,6 +284,11 @@ for (var i=0; i<jsObject.service_list.length; i++) {
         karen_week_complete=karen_week_complete+1;
         $("#karen_week_complete").html(karen_week_complete);
       }
+      //check if it's within mtd range
+      if(jsObject.service_list[i].age <= mtd_days ){
+        karen_completed_mtd=karen_completed_mtd+1;
+        $('#karen_completed_mtd').html(karen_completed_mtd);
+      }
     }
     // ta
     if(jsObject.service_list[i].assigned_to=="adrian"){
@@ -245,6 +297,10 @@ for (var i=0; i<jsObject.service_list.length; i++) {
       if(jsObject.service_list[i].age < 8){
         adrian_week_complete=adrian_week_complete+1;
         $("#adrian_week_complete").html(adrian_week_complete);
+      }
+      if(jsObject.service_list[i].age <= mtd_days ){
+        adrian_completed_mtd=adrian_completed_mtd+1;
+        $('#adrian_completed_mtd').html(adrian_completed_mtd);
       }
     }
   } // end of completion check
