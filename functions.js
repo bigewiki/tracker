@@ -61,7 +61,7 @@ $('#weekAgosDateOutput').html(sevenDayArray[6]);
 // Get JSON and create objects
 /******************/
 var xmlhttp = new XMLHttpRequest();
-var url = "http://bigewiki.com/json/projectdata.json";
+var url = "https://bigewiki.com/tracker/projectdata.json";
 xmlhttp.open("GET", url, false);
 xmlhttp.send();
 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -151,6 +151,13 @@ johnny_mtd_dates=[];
 penelope_mtd_dates=[];
 karen_mtd_dates=[];
 adrian_mtd_dates=[];
+
+roger_mtd_dates_unique=[];
+johnny_mtd_dates_unique=[];
+penelope_mtd_dates_unique=[];
+karen_mtd_dates_unique=[];
+adrian_mtd_dates_unique=[];
+
 
 /************************************/
 // Looping through all the projects gathered through the JSON file
@@ -252,14 +259,15 @@ for (var i=0; i<jsObject.service_list.length; i++) {
           $('#roger_completed_mtd').html(roger_completed_mtd);
           //adding date to the array
           roger_mtd_dates.push(jsObject.service_list[i].age);
-
-          // temporary and annoying in the meantime
-          alert(JSON.stringify(roger_mtd_dates));
-
-          // v this stuff be broken v
-          // roger_mtd_dates=JSON.stringify(roger_mtd_dates);
-          // $("#roger_active_mtd").html(roger_mtd_dates);
-
+          // seperate unique dates
+          $.each(roger_mtd_dates, function(i, el){
+            if($.inArray(el, roger_mtd_dates_unique) === -1) roger_mtd_dates_unique.push(el);
+          });
+          //count the number of unique dates and display
+          $("#roger_active_mtd").html(roger_mtd_dates_unique.length);
+          //calculate average per day and round it
+          roger_avg_mtd=precisionRound(roger_completed_mtd/roger_mtd_dates_unique.length, 1);
+          $("#roger_avg_mtd").html(roger_avg_mtd);
         }
 
     }
