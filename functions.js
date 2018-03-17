@@ -160,6 +160,10 @@ adrian_mtd_dates_unique=[];
 
 // count mtd projects
 total_mtd_all=0;
+total_mtd_complete=0;
+total_mtd_cxreview=0;
+total_mtd_waiting=0;
+total_mtd_agentreview=0;
 
 /************************************/
 // Looping through all the projects gathered through the JSON file
@@ -170,11 +174,32 @@ for (var i=0; i<jsObject.service_list.length; i++) {
   if(jsObject.service_list[i].age <= mtd_days ){
     total_mtd_all=total_mtd_all+1;
     $("#total_mtd_all").html(total_mtd_all);
+
+    switch (jsObject.service_list[i].status) {
+      case "Customer Review":
+          total_mtd_cxreview=total_mtd_cxreview+1;
+          $('#total_mtd_cxreview').html(total_mtd_cxreview);
+          break;
+      case "Complete":
+          total_mtd_complete=total_mtd_complete+1;
+          $('#total_mtd_complete').html(total_mtd_complete);
+          break;
+      case "Waiting For Cust":
+          total_mtd_waiting=total_mtd_waiting+1;
+          $('#total_mtd_waiting').html(total_mtd_waiting);
+          break;
+      case "Agent Review":
+          total_mtd_agentreview=total_mtd_agentreview+1;
+          $('#total_mtd_agentreview').html(total_mtd_agentreview);
+          break;
+    }
+
   }
 
   if(sevenDayArray.includes(jsObject.service_list[i].added.substring(0, 10))==true){
     total_sold_lastweek=total_sold_lastweek+1;
     $("#total_sold_lastweek").html(total_sold_lastweek);
+
   };
 
 
@@ -388,3 +413,4 @@ for (var i=0; i<jsObject.service_list.length; i++) {
 
 
 } // end of service list loop
+//
