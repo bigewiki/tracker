@@ -286,6 +286,17 @@ for (var i=0; i<jsObject.service_list.length; i++) {
       if(jsObject.service_list[i].age <= mtd_days ){
         johnny_completed_mtd=johnny_completed_mtd+1;
         $('#johnny_completed_mtd').html(johnny_completed_mtd);
+        //adding date to the array
+        johnny_mtd_dates.push(jsObject.service_list[i].age);
+        // seperate unique dates
+        $.each(johnny_mtd_dates, function(i, el){
+          if($.inArray(el, johnny_mtd_dates_unique) === -1) johnny_mtd_dates_unique.push(el);
+        });
+        //count the number of unique dates and display
+        $("#johnny_active_mtd").html(johnny_mtd_dates_unique.length);
+        //calculate average per day and round it
+        johnny_avg_mtd=precisionRound(johnny_completed_mtd/johnny_mtd_dates_unique.length, 1);
+        $("#johnny_avg_mtd").html(johnny_avg_mtd);
       }
     }
     // mc
@@ -300,6 +311,17 @@ for (var i=0; i<jsObject.service_list.length; i++) {
       if(jsObject.service_list[i].age <= mtd_days ){
         penelope_completed_mtd=penelope_completed_mtd+1;
         $('#penelope_completed_mtd').html(penelope_completed_mtd);
+        //adding date to the array
+        penelope_mtd_dates.push(jsObject.service_list[i].age);
+        // seperate unique dates
+        $.each(penelope_mtd_dates, function(i, el){
+          if($.inArray(el, penelope_mtd_dates_unique) === -1) penelope_mtd_dates_unique.push(el);
+        });
+        //count the number of unique dates and display
+        $("#penelope_active_mtd").html(penelope_mtd_dates_unique.length);
+        //calculate average per day and round it
+        penelope_avg_mtd=precisionRound(penelope_completed_mtd/penelope_mtd_dates_unique.length, 1);
+        $("#penelope_avg_mtd").html(penelope_avg_mtd);
       }
     }
     // sh
@@ -314,6 +336,17 @@ for (var i=0; i<jsObject.service_list.length; i++) {
       if(jsObject.service_list[i].age <= mtd_days ){
         karen_completed_mtd=karen_completed_mtd+1;
         $('#karen_completed_mtd').html(karen_completed_mtd);
+        //adding date to the array
+        karen_mtd_dates.push(jsObject.service_list[i].age);
+        // seperate unique dates
+        $.each(karen_mtd_dates, function(i, el){
+          if($.inArray(el, karen_mtd_dates_unique) === -1) karen_mtd_dates_unique.push(el);
+        });
+        //count the number of unique dates and display
+        $("#karen_active_mtd").html(karen_mtd_dates_unique.length);
+        //calculate average per day and round it
+        karen_avg_mtd=precisionRound(karen_completed_mtd/karen_mtd_dates_unique.length, 1);
+        $("#karen_avg_mtd").html(karen_avg_mtd);
       }
     }
     // ta
@@ -327,6 +360,17 @@ for (var i=0; i<jsObject.service_list.length; i++) {
       if(jsObject.service_list[i].age <= mtd_days ){
         adrian_completed_mtd=adrian_completed_mtd+1;
         $('#adrian_completed_mtd').html(adrian_completed_mtd);
+        //adding date to the array
+        adrian_mtd_dates.push(jsObject.service_list[i].age);
+        // seperate unique dates
+        $.each(adrian_mtd_dates, function(i, el){
+          if($.inArray(el, adrian_mtd_dates_unique) === -1) adrian_mtd_dates_unique.push(el);
+        });
+        //count the number of unique dates and display
+        $("#adrian_active_mtd").html(adrian_mtd_dates_unique.length);
+        //calculate average per day and round it
+        adrian_avg_mtd=precisionRound(adrian_completed_mtd/adrian_mtd_dates_unique.length, 1);
+        $("#adrian_avg_mtd").html(adrian_avg_mtd);
       }
     }
   } // end of completion check
