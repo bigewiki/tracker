@@ -144,7 +144,7 @@ $("#karen_completed_mtd").html(karen_completed_mtd);
 adrian_completed_mtd=0;
 $("#adrian_completed_mtd").html(adrian_completed_mtd);
 
-// setting up array for all mtd dates
+// setting up arrays for all mtd dates
 all_mtd_dates=[];
 roger_mtd_dates=[];
 johnny_mtd_dates=[];
@@ -158,12 +158,19 @@ penelope_mtd_dates_unique=[];
 karen_mtd_dates_unique=[];
 adrian_mtd_dates_unique=[];
 
+// count mtd projects
+total_mtd_all=0;
 
 /************************************/
 // Looping through all the projects gathered through the JSON file
 /************************************/
 
 for (var i=0; i<jsObject.service_list.length; i++) {
+
+  if(jsObject.service_list[i].age <= mtd_days ){
+    total_mtd_all=total_mtd_all+1;
+    $("#total_mtd_all").html(total_mtd_all);
+  }
 
   if(sevenDayArray.includes(jsObject.service_list[i].added.substring(0, 10))==true){
     total_sold_lastweek=total_sold_lastweek+1;
@@ -381,4 +388,3 @@ for (var i=0; i<jsObject.service_list.length; i++) {
 
 
 } // end of service list loop
-//
