@@ -325,7 +325,7 @@ for (var i=0; i<jsObject.service_list.length; i++) {
       }
     }
     // sh
-    if(jsObject.service_list[i].assigned_to=="karen"){
+    if(jsObject.service_list[i].assigned_to==""){
       karen_complete = karen_complete+1;
       $('#karen_complete_display').html(karen_complete);
       if(jsObject.service_list[i].age < 8){
@@ -381,3 +381,4 @@ for (var i=0; i<jsObject.service_list.length; i++) {
 
 
 } // end of service list loop
+//
