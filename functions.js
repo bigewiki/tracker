@@ -12,7 +12,7 @@ function precisionRound(number, precision) {
 /****SET TODAY****/
 
 // var date = new Date();
-var date = new Date('2018-01-29T00:00:00+05:30');//yyyy-dd-mm
+var date = new Date('2018-01-20T00:00:00+05:30');//yyyy-dd-mm
 // forcing 2 digit month
 var todaysMonth = (1 + date.getMonth()).toString();
 todaysMonth = todaysMonth.length > 1 ? todaysMonth : '0' + todaysMonth;
@@ -28,7 +28,7 @@ todaysDate = todaysMonth + '/' + todaysDay + '/' +  date.getFullYear();
 // do not forget to remove this fake variable when this goes live
 
 // mtd_days=parseInt(todaysDay);
-mtd_days=parseInt(29);
+mtd_days=parseInt(20);
 
 /**** ^IMPORTANT^ *****/
 
@@ -193,6 +193,8 @@ for (var i=0; i<jsObject.service_list.length; i++) {
           $('#total_mtd_agentreview').html(total_mtd_agentreview);
           break;
     }
+
+/* CALCULATE PERCENTAGES FOR MTD PROJECTS */
     //calulculate cxreview percent
     total_mtd_cxreview_percent=precisionRound(total_mtd_cxreview * 100 / total_mtd_all, 1);
     $('#total_mtd_cxreview_percent').html(total_mtd_cxreview_percent+"%");
@@ -206,6 +208,31 @@ for (var i=0; i<jsObject.service_list.length; i++) {
     total_mtd_agentreview_percent=precisionRound(total_mtd_agentreview * 100 / total_mtd_all, 1);
     $('#total_mtd_agentreview_percent').html(total_mtd_agentreview_percent+"%");
 
+/* CALCULATE PACING FOR MTD PROJECTS */
+    // calculate projects sold mtd for pacing
+    mtd_all_pacing=precisionRound(total_mtd_all/mtd_days*30,0);
+    $('#mtd_all_pacing').html(mtd_all_pacing);
+    // calculate projects complete for pacing
+    mtd_completed_pacing=precisionRound(total_mtd_complete/mtd_days*30,0);
+    $('#mtd_completed_pacing').html(mtd_completed_pacing);
+    // calculate projects cxreview for pacing
+    mtd_cxreview_pacing=precisionRound(total_mtd_cxreview/mtd_days*30,0);
+    $('#mtd_cxreview_pacing').html(mtd_cxreview_pacing);
+
+/* CONSTRUCTION ZONE - this is temporary: remove this and fix the BELOW *****/
+
+    // calculate projects cancelled mtd for pacing
+    // mtd_cancelled_pacing=total_mtd_cancelled/mtd_days*30;
+    // $('#mtd_cancelled_pacing').html(mtd_cancelled_pacing);
+    // calculate project difference mtd for pacing
+    // mtd_difference_pacing=mtd_completed_pacing+mtd_cxreview_pacing+mtd_cancelled_pacing;
+
+/**** IMPORTANT  this is temporary: remove this and fix the above *****/
+
+    mtd_difference_pacing=mtd_completed_pacing+mtd_cxreview_pacing-total_mtd_all;
+/**** ^IMPORTANT^ *****/
+
+    $('#mtd_difference_pacing').html(mtd_difference_pacing);
 
   }
 
