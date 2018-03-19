@@ -170,11 +170,11 @@ total_mtd_agentreview=0;
 /************************************/
 
 for (var i=0; i<jsObject.service_list.length; i++) {
-
+// looking for the projects this month
   if(jsObject.service_list[i].age <= mtd_days ){
     total_mtd_all=total_mtd_all+1;
     $("#total_mtd_all").html(total_mtd_all);
-
+// check the status of the project and count
     switch (jsObject.service_list[i].status) {
       case "Customer Review":
           total_mtd_cxreview=total_mtd_cxreview+1;
@@ -193,6 +193,19 @@ for (var i=0; i<jsObject.service_list.length; i++) {
           $('#total_mtd_agentreview').html(total_mtd_agentreview);
           break;
     }
+    //calulculate cxreview percent
+    total_mtd_cxreview_percent=precisionRound(total_mtd_cxreview * 100 / total_mtd_all, 1);
+    $('#total_mtd_cxreview_percent').html(total_mtd_cxreview_percent+"%");
+    //calulculate complete percent
+    total_mtd_complete_percent=precisionRound(total_mtd_complete * 100 / total_mtd_all, 1);
+    $('#total_mtd_complete_percent').html(total_mtd_complete_percent+"%");
+    //calulculate waiting percent
+    total_mtd_waiting_percent=precisionRound(total_mtd_waiting * 100 / total_mtd_all, 1);
+    $('#total_mtd_waiting_percent').html(total_mtd_waiting_percent+"%");
+    //calulculate agentreview percent
+    total_mtd_agentreview_percent=precisionRound(total_mtd_agentreview * 100 / total_mtd_all, 1);
+    $('#total_mtd_agentreview_percent').html(total_mtd_agentreview_percent+"%");
+
 
   }
 
