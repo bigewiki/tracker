@@ -165,6 +165,11 @@ total_mtd_cxreview=0;
 total_mtd_waiting=0;
 total_mtd_agentreview=0;
 
+// count 7d projects
+roger_7d_dates=[];
+roger_7d_dates_unique=[];
+roger_7d_avg=0;
+
 /************************************/
 // Looping through all the projects gathered through the JSON file
 /************************************/
@@ -324,7 +329,23 @@ for (var i=0; i<jsObject.service_list.length; i++) {
         if(jsObject.service_list[i].age < 8){
           roger_week_complete=roger_week_complete+1;
           $("#roger_week_complete").html(roger_week_complete);
+
+        roger_7d_dates.push(jsObject.service_list[i].age);
+        // seperate unique dates
+        $.each(roger_7d_dates, function(i, el){
+          if($.inArray(el, roger_7d_dates_unique) === -1) roger_7d_dates_unique.push(el);
+        });
+        //count the number of unique dates and display
+        $("#roger_week_activedays").html(roger_7d_dates_unique.length);
+        //calculate 7 day average
+        roger_7d_avg=precisionRound(roger_week_complete/roger_7d_dates_unique.length, 1);
+        $("#roger_completionrate_display").html(roger_7d_avg);
+        
         }
+        
+
+        
+        
         //check if it's within mtd range
         if(jsObject.service_list[i].age <= mtd_days ){
           roger_completed_mtd=roger_completed_mtd+1;
