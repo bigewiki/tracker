@@ -170,6 +170,24 @@ roger_7d_dates=[];
 roger_7d_dates_unique=[];
 roger_7d_avg=0;
 
+johnny_7d_dates=[];
+johnny_7d_dates_unique=[];
+johnny_7d_avg=0;
+
+penelope_7d_dates=[];
+penelope_7d_dates_unique=[];
+penelope_7d_avg=0;
+
+karen_7d_dates=[];
+karen_7d_dates_unique=[];
+karen_7d_avg=0;
+
+adrian_7d_dates=[];
+adrian_7d_dates_unique=[];
+adrian_7d_avg=0;
+
+
+
 /************************************/
 // Looping through all the projects gathered through the JSON file
 /************************************/
@@ -374,6 +392,18 @@ for (var i=0; i<jsObject.service_list.length; i++) {
       if(jsObject.service_list[i].age < 8){
         johnny_week_complete=johnny_week_complete+1;
         $("#johnny_week_complete").html(johnny_week_complete);
+        
+        johnny_7d_dates.push(jsObject.service_list[i].age);
+        // seperate unique dates
+        $.each(johnny_7d_dates, function(i, el){
+          if($.inArray(el, johnny_7d_dates_unique) === -1) johnny_7d_dates_unique.push(el);
+        });
+        //count the number of unique dates and display
+        $("#johnny_week_activedays").html(johnny_7d_dates_unique.length);
+        //calculate 7 day average
+        johnny_7d_avg=precisionRound(johnny_week_complete/johnny_7d_dates_unique.length, 1);
+        $("#johnny_completionrate_display").html(johnny_7d_avg);
+        
       }
       //check if it's within mtd range
       if(jsObject.service_list[i].age <= mtd_days ){
@@ -399,6 +429,18 @@ for (var i=0; i<jsObject.service_list.length; i++) {
       if(jsObject.service_list[i].age < 8){
         penelope_week_complete=penelope_week_complete+1;
         $("#penelope_week_complete").html(penelope_week_complete);
+        
+        penelope_7d_dates.push(jsObject.service_list[i].age);
+        // seperate unique dates
+        $.each(penelope_7d_dates, function(i, el){
+          if($.inArray(el, penelope_7d_dates_unique) === -1) penelope_7d_dates_unique.push(el);
+        });
+        //count the number of unique dates and display
+        $("#penelope_week_activedays").html(penelope_7d_dates_unique.length);
+        //calculate 7 day average
+        penelope_7d_avg=precisionRound(penelope_week_complete/penelope_7d_dates_unique.length, 1);
+        $("#penelope_completionrate_display").html(penelope_7d_avg);
+        
       }
       //check if it's within mtd range
       if(jsObject.service_list[i].age <= mtd_days ){
@@ -424,6 +466,18 @@ for (var i=0; i<jsObject.service_list.length; i++) {
       if(jsObject.service_list[i].age < 8){
         karen_week_complete=karen_week_complete+1;
         $("#karen_week_complete").html(karen_week_complete);
+        
+        karen_7d_dates.push(jsObject.service_list[i].age);
+        // seperate unique dates
+        $.each(karen_7d_dates, function(i, el){
+          if($.inArray(el, karen_7d_dates_unique) === -1) karen_7d_dates_unique.push(el);
+        });
+        //count the number of unique dates and display
+        $("#karen_week_activedays").html(karen_7d_dates_unique.length);
+        //calculate 7 day average
+        karen_7d_avg=precisionRound(karen_week_complete/karen_7d_dates_unique.length, 1);
+        $("#karen_completionrate_display").html(karen_7d_avg);
+        
       }
       //check if it's within mtd range
       if(jsObject.service_list[i].age <= mtd_days ){
@@ -449,6 +503,18 @@ for (var i=0; i<jsObject.service_list.length; i++) {
       if(jsObject.service_list[i].age < 8){
         adrian_week_complete=adrian_week_complete+1;
         $("#adrian_week_complete").html(adrian_week_complete);
+        
+        adrian_7d_dates.push(jsObject.service_list[i].age);
+        // seperate unique dates
+        $.each(adrian_7d_dates, function(i, el){
+          if($.inArray(el, adrian_7d_dates_unique) === -1) adrian_7d_dates_unique.push(el);
+        });
+        //count the number of unique dates and display
+        $("#adrian_week_activedays").html(adrian_7d_dates_unique.length);
+        //calculate 7 day average
+        adrian_7d_avg=precisionRound(adrian_week_complete/adrian_7d_dates_unique.length, 1);
+        $("#adrian_completionrate_display").html(adrian_7d_avg);
+        
       }
       if(jsObject.service_list[i].age <= mtd_days ){
         adrian_completed_mtd=adrian_completed_mtd+1;
