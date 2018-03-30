@@ -35,53 +35,83 @@
       </div>
       <div id="7day_cohort_tab">
         <div class="row">
-          <div class="card z-depth-0 col s6">
-            <table style="max-width:700px;">
-             <thead>
-               <tr>
-                 <th colspan="4">Completed in last week by agent</th>
-               </tr>
-               <tr>
-                   <th>Agent Name</th>
-                   <th>Total Completed</th>
-                   <th>Active Days</th>
-                   <th>Average Per Day</th>
-               </tr>
-             </thead>
-
-             <tbody>
-               <tr>
-                   <td>Roger</td>
-                   <td><span id="roger_week_complete"></span></td>
-                   <td><span id="roger_week_activedays"></span></td>
-                   <td><span id="roger_completionrate_display"></span></td>
-               </tr>
-               <tr>
-                 <td>Johhny</td>
-                 <td><span id="johnny_week_complete"></span></td>
-                 <td><span id="johnny_week_activedays"></span></td>
-                 <td><span id="johnny_completionrate_display"></span></td>
-               </tr>
-               <tr>
-                 <td>Penelope</td>
-                 <td><span id="penelope_week_complete"></span></td>
-                 <td><span id="penelope_week_activedays"></span></td>
-                 <td><span id="penelope_completionrate_display"></span></td>
-               </tr>
-               <tr>
-                 <td>Karen</td>
-                 <td><span id="karen_week_complete"></span></td>
-                 <td><span id="karen_week_activedays"></span></td>
-                 <td><span id="karen_completionrate_display"></span></td>
-               </tr>
-               <tr>
-                 <td>Adrian</td>
-                 <td><span id="adrian_week_complete"></span></td>
-                 <td><span id="adrian_week_activedays"></span></td>
-                 <td><span id="adrian_completionrate_display"></span></td>
-               </tr>
-             </tbody>
-           </table>
+          <div class="col s6">
+              <div class="card z-depth-0">
+                  <table style="max-width:700px;">
+                     <thead>
+                       <tr>
+                         <th colspan="4">Completed in last week by agent</th>
+                       </tr>
+                       <tr>
+                           <th>Agent Name</th>
+                           <th>Total Completed</th>
+                           <th>Active Days</th>
+                           <th>Average Per Day</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr>
+                           <td>Roger</td>
+                           <td><span id="roger_week_complete"></span></td>
+                           <td><span id="roger_week_activedays"></span></td>
+                           <td><span id="roger_completionrate_display"></span></td>
+                       </tr>
+                       <tr>
+                         <td>Johhny</td>
+                         <td><span id="johnny_week_complete"></span></td>
+                         <td><span id="johnny_week_activedays"></span></td>
+                         <td><span id="johnny_completionrate_display"></span></td>
+                       </tr>
+                       <tr>
+                         <td>Penelope</td>
+                         <td><span id="penelope_week_complete"></span></td>
+                         <td><span id="penelope_week_activedays"></span></td>
+                         <td><span id="penelope_completionrate_display"></span></td>
+                       </tr>
+                       <tr>
+                         <td>Karen</td>
+                         <td><span id="karen_week_complete"></span></td>
+                         <td><span id="karen_week_activedays"></span></td>
+                         <td><span id="karen_completionrate_display"></span></td>
+                       </tr>
+                       <tr>
+                         <td>Adrian</td>
+                         <td><span id="adrian_week_complete"></span></td>
+                         <td><span id="adrian_week_activedays"></span></td>
+                         <td><span id="adrian_completionrate_display"></span></td>
+                       </tr>
+                     </tbody>
+                   </table>
+              </div>
+          </div>
+          <div class="col s6">
+              <div class="card z-depth-0">
+                  <table>
+              <thead>
+                <tr>
+                  <th colspan="2">Past Week: <span id="weekAgosDateOutput"></span> - <span id="todaysDateOutput"></span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Total sold in last week: </td>
+                  <td><span id="total_sold_lastweek"></span></td>
+                </tr>
+                <tr>
+                  <td>Total completed in last week: </td>
+                  <td><span id="total_complete_lastweek"></span></td>
+                </tr>
+                <tr>
+                  <td>Total customer review in last week: </td>
+                  <td><span id="total_cxreview_lastweek"></span></td>
+                </tr>
+                <tr>
+                  <td>Total cancel in last week: </td>
+                  <td><span id="total_cancel_lastweek"></span></td>
+                </tr>
+              </tbody>
+          </table>
+              </div>
           </div>
         </div>
       </div>
@@ -259,33 +289,6 @@
                 </tr>
               </tbody>
             </table>
-          </div>
-          <div class="col s6 black-text bottom">
-            <table>
-              <thead>
-                <tr>
-                  <th colspan="2">Past Week: <span id="weekAgosDateOutput"></span> - <span id="todaysDateOutput"></span></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Total sold in last week: </td>
-                  <td><span id="total_sold_lastweek"></span></td>
-                </tr>
-                <tr>
-                  <td>Total completed in last week: </td>
-                  <td><span id="total_complete_lastweek"></span></td>
-                </tr>
-                <tr>
-                  <td>Total customer review in last week: </td>
-                  <td><span id="total_cxreview_lastweek"></span></td>
-                </tr>
-                <tr>
-                  <td>Total cancel in last week: </td>
-                  <td><span id="total_cancel_lastweek"></span></td>
-                </tr>
-              </tbody>
-          </table>
           </div>
         </div>
       </div>

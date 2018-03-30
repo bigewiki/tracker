@@ -243,6 +243,7 @@ for (var i=0; i<jsObject.service_list.length; i++) {
     $('#mtd_cxreview_pacing').html(mtd_cxreview_pacing);
 
 /* CONSTRUCTION ZONE - this is temporary: remove this and fix the BELOW *****/
+// this is here because we don't have the cancellation data yet
 
     // calculate projects cancelled mtd for pacing
     // mtd_cancelled_pacing=total_mtd_cancelled/mtd_days*30;
